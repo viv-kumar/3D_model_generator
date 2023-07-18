@@ -17,9 +17,12 @@ import {
 
 const Customizer = () => {
   const snap = useSnapshot(state);
+
   const [file, setFile] = useState("");
+
   const [prompt, setPrompt] = useState("");
   const [generatingImg, setGeneratingImg] = useState(false);
+
   const [activeEditorTab, setActiveEditorTab] = useState("");
   const [activeFilterTab, setActiveFilterTab] = useState({
     logoShirt: true,
@@ -54,7 +57,7 @@ const Customizer = () => {
       setGeneratingImg(true);
 
       const response = await fetch(
-        "https://threed-model-generator.onrender.com",
+        "https://threed-model-generator.onrender.com/",
         {
           method: "POST",
           headers: {
@@ -138,9 +141,6 @@ const Customizer = () => {
                 ))}
 
                 {generateTabContent()}
-
-
-
               </div>
             </div>
           </motion.div>
